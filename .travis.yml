@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+  before_install:
+    - docker build -t reza/docker-react -f Dockerfile.dev . 
+
+  script:
+    - docker run reza/docker-react npm run test -- --coverage
