@@ -2,8 +2,8 @@ sudo: required
 services:
     - docker
 
-  before_install:
+before_install:
     - docker build -t khore01/docker-react -f Dockerfile.dev . 
 
-  script:
+script:
     - docker run khore01/docker-react npm run test -- --coverage
